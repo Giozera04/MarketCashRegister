@@ -19,12 +19,12 @@ which is used by store employees to verify purchases during the checkout process
 
 <p float="left">
   <img src="screenshots/cart.PNG" width="220" />
-  <img src="screenshots/orders.PNG" width="220" />
+  <img src="screenshots/receipt.PNG" width="220" />
   <img src="screenshots/purchased_verification.PNG" width="220" />
 </p>
 
 <p float="left">
-  <img src="screenshots/receipt.PNG" width="220" />
+  <img src="screenshots/orders.PNG" width="220" />
 </p>
 
 ---
