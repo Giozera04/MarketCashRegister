@@ -24,7 +24,7 @@ which is used by store employees to verify purchases during the checkout process
 </p>
 
 <p float="left">
-  <img src="screenshots/purchased___verification.png" width="220" />
+  <img src="screenshots/purchased_..._verification.png" width="220" />
 </p>
 
 ---
