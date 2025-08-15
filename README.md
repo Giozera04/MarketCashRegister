@@ -49,4 +49,4 @@ which is used by store employees to verify purchases during the checkout process
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/MarketRegisterPurchase.git
+   git clone https://github.com/Giozera04/MarketRegisterPurchase.git
