@@ -84,6 +84,11 @@
 			path = MarketRegisterPurchaseUITests;
 			sourceTree = "<group>";
 		};
+		65E7A7042E4FD69000F7A782 /* screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +126,7 @@
 		654749582D72DCEC00FC3688 = {
 			isa = PBXGroup;
 			children = (
+				65E7A7042E4FD69000F7A782 /* screenshots */,
 				654749632D72DCEC00FC3688 /* MarketRegisterPurchase */,
 				654749742D72DCED00FC3688 /* MarketRegisterPurchaseTests */,
 				6547497E2D72DCED00FC3688 /* MarketRegisterPurchaseUITests */,
@@ -163,6 +169,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				654749632D72DCEC00FC3688 /* MarketRegisterPurchase */,
+				65E7A7042E4FD69000F7A782 /* screenshots */,
 			);
 			name = MarketRegisterPurchase;
 			packageProductDependencies = (
