@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseAuth
-
+import StripeCore
 
 @main
 struct MarketRegisterPurchaseApp: App {
@@ -18,6 +18,8 @@ struct MarketRegisterPurchaseApp: App {
     init() {
         FirebaseApp.configure()
         print("Configuring Firebase...")
+        
+        StripeAPI.defaultPublishableKey = "pk_test_51SwTz7LiEbqyWjZMs7ipljdANxJnake4dmh5K6hkuSwvRJhDp5xbEhjvAlYE2EtkXizzZAUpgqym93OFCfoNT5kr00vAAldsJO"
         
         let locManager = LocationManager()
         _locationManager = StateObject(wrappedValue: locManager)

@@ -137,7 +137,8 @@ class CartViewModel: ObservableObject {
             "userId": userId,
             "timestamp": Timestamp(date: Date()),
             "items": orderItems,
-            "total": cart.totalCost()
+            "total": cart.totalCost(),
+            "status": "created"
         ]
         
         if let store = locationManager.currentStore {

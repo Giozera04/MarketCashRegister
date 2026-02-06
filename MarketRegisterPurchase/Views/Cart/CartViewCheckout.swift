@@ -7,13 +7,13 @@ struct CartViewCheckout: View {
     
     @State private var navigateToPayment = false
     @State private var lastSavedOrderId: String = ""
+    @State private var totalAmountCents: Int = 0 // amount in cents
     
     var safeAreaInsetBottom: CGFloat {
         UIApplication.shared.connectedScenes
             .compactMap { ($0 as? UIWindowScene)?.keyWindow }
             .first?.safeAreaInsets.bottom ?? 10
     }
-    
     
     var body: some View {
         NavigationStack {
@@ -48,13 +48,24 @@ struct CartViewCheckout: View {
                             .bold()
                         
                         Button("✅ Complete Purchase") {
+                            let totalCents = Int((cartViewModel.cart.totalCost() * 100).rounded())
+                            totalAmountCents = totalCents  // ← assign here
+                            print("🛒 Cart total:", cartViewModel.cart.totalCost())
+                            print("💰 Total in cents:", totalCents)
+                            
                             cartViewModel.checkout { id in
                                 if let id = id {
                                     self.lastSavedOrderId = id
+                                    print("🆔 Order ID:", id)
+                                    print("➡️ Navigating to PaymentStripeView with amount:", totalCents)
+                                    self.totalAmountCents = totalCents // <-- update state
                                     navigateToPayment = true
+                                } else {
+                                    print("❌ Failed to create order")
                                 }
                             }
                         }
+
                         .buttonStyle(PrimaryButtonStyle())
                         .padding(.horizontal)
                         
@@ -70,11 +81,11 @@ struct CartViewCheckout: View {
                     .padding(.bottom, safeAreaInsetBottom)
                     .background(Color.white)
                     
-                    // 🔗 Hidden NavigationLink
+                    // 🔗 Hidden NavigationLink to Stripe Payment
                     NavigationLink(
-                        destination: PaymentPlaceholderView(
-                            onSimulatePayment: { },
-                            orderId: lastSavedOrderId
+                        destination: PaymentStripeView(
+                            orderId: lastSavedOrderId,
+                            amount: totalAmountCents
                         ),
                         isActive: $navigateToPayment
                     ) {
@@ -85,3 +96,4 @@ struct CartViewCheckout: View {
         }
     }
 }
+
